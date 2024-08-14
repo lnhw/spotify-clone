@@ -10,7 +10,6 @@ import React from "react";
 
 export default function LayoutSearch({ children }: { children: React.ReactNode }) {
     const { isMobile, isTablet, isDesktop } = useResponsive();
-    
     return (
         <>
             {isMobile && (<>
