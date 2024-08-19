@@ -1,8 +1,8 @@
 export type ExternalUrls = {
-    spotify: string
-}
+  spotify: string;
+};
 export type Image = {
-    height: number;
-    url: string;
-    width: number;
-}
+  height: number;
+  url: string;
+  width: number;
+};

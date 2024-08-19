@@ -1,3 +1,3 @@
 export type Market = {
-    code: string;
-}
+  code: string;
+};

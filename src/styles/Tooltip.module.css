@@ -1,57 +1,57 @@
 .tooltipWrapper {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .tooltip {
-    position: absolute;
-    text-align: center;
-    padding: 2px;
-    font-size: 12px;
-    white-space: nowrap;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    background-color: gray;
-    color: white;
+  position: absolute;
+  text-align: center;
+  padding: 2px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  background-color: gray;
+  color: white;
 }
 
 .tooltipText {
-    display: block;
-    color: white;
+  display: block;
+  color: white;
 }
 
 .tooltip::after {
-    content: '';
-    position: absolute;
-    /* border-style: solid;
+  content: '';
+  position: absolute;
+  /* border-style: solid;
     border-width: 5px; */
 }
 
 .tooltipTop::after {
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-color: var(--background-color) transparent transparent transparent;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-color: var(--background-color) transparent transparent transparent;
 }
 
 .tooltipRight::after {
-    top: 50%;
-    right: 100%;
-    margin-top: -5px;
-    border-color: transparent var(--background-color) transparent transparent;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-color: transparent var(--background-color) transparent transparent;
 }
 
 .tooltipBottom::after {
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-color: transparent transparent var(--background-color) transparent;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-color: transparent transparent var(--background-color) transparent;
 }
 
 .tooltipLeft::after {
-    top: 50%;
-    left: 100%;
-    margin-top: -5px;
-    border-color: transparent transparent transparent var(--background-color);
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-color: transparent transparent transparent var(--background-color);
 }

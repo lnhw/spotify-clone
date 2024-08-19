@@ -1,8 +1,8 @@
-import { Image } from "./common";
+import { Image } from './common';
 
 export type Category = {
-    href: string;
-    icons: Image[];
-    id: string;
-    name: string;
-}
+  href: string;
+  icons: Image[];
+  id: string;
+  name: string;
+};

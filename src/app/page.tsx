@@ -1,18 +1,18 @@
-"use client";
-import Footer from "@/components/footer";
-import MainContent from "@/components/main/maincontent";
-import NavBar from "@/components/navbar";
-import Playerbar from "@/components/playerbar";
-import RecentlyPlayed from "@/components/recently-played";
-import SideBar from "@/components/siderbar";
-import { PlayerProvider } from "@/contexts/playerbar/playerContext";
-import { useSession } from "next-auth/react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { CiSettings } from "react-icons/ci";
-import Logo from "@/assest/img/Spotify_Primary_Logo_RGB_Green.png"
-import useResponsive from "@/hooks/useResponsive";
+'use client';
+import Footer from '@/components/footer';
+import MainContent from '@/components/main/maincontent';
+import NavBar from '@/components/navbar/navbar';
+import Playerbar from '@/components/playerbar';
+import RecentlyPlayed from '@/components/recently-played';
+import SideBar from '@/components/siderbar';
+import { PlayerProvider } from '@/contexts/playerbar/playerContext';
+import { useSession } from 'next-auth/react';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
+import { CiSettings } from 'react-icons/ci';
+import Logo from '@/assest/img/Spotify_Primary_Logo_RGB_Green.png';
+import useResponsive from '@/hooks/useResponsive';
 export default function Home() {
   const { data: session, status } = useSession();
   const router = useRouter();
@@ -22,8 +22,8 @@ export default function Home() {
   const [isResizing, setIsResizing] = useState(false);
   const { isMobile, isTablet, isDesktop } = useResponsive();
   useEffect(() => {
-    if (status === "unauthenticated") {
-      router.push("/login");
+    if (status === 'unauthenticated') {
+      router.push('/login');
     }
   }, [status, router]);
 
@@ -49,13 +49,13 @@ export default function Home() {
     };
 
     if (isResizing) {
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", handleMouseUp);
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mouseup', handleMouseUp);
     }
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
     };
   }, [isResizing]);
 
@@ -77,7 +77,8 @@ export default function Home() {
                 <div className="p-3 flex items-center justify-between">
                   <div>
                     <div className="relative h-[56px] w-[56px] rounded-full overflow-hidden">
-                      <Image className="object-cover"
+                      <Image
+                        className="object-cover"
                         src={Logo}
                         alt="Spotify logo"
                         fill
@@ -86,7 +87,7 @@ export default function Home() {
                     </div>
                   </div>
                   <CiSettings color="white" size={30} />
-                </div >
+                </div>
               </>
               <>
                 <MainContent />
@@ -99,10 +100,10 @@ export default function Home() {
                 <Playerbar />
               </PlayerProvider>
             </div>
-          </main >
+          </main>
         </>
       )}
-      {isTablet && (<>Tablet !</>)}
+      {isTablet && <>Tablet !</>}
       {isDesktop && (
         <>
           <main
@@ -110,20 +111,22 @@ export default function Home() {
             className="bg-black grid grid-rows[2fr_auto] gap-3"
             ref={containerRef}
           >
-            <div className="grid gap-2"
+            <div
+              className="grid gap-2"
               style={{
-                gridTemplateColumns: `${typeof sidebarWidth === 'number' ? `${sidebarWidth}px` : sidebarWidth} 8fr`
-              }}>
+                gridTemplateColumns: `${typeof sidebarWidth === 'number' ? `${sidebarWidth}px` : sidebarWidth} 8fr`,
+              }}
+            >
               <div className="flex">
                 <div className="flex-1">
                   <SideBar />
                 </div>
-                <div ref={sidebarRef}
+                <div
+                  ref={sidebarRef}
                   className={`w-[1px] cursor-ew-resize hover:bg-white ${isResizing ? 'bg-white' : ''}`}
                   onMouseDown={handleMouseDown}
                   onMouseDownCapture={handleMouseDown}
-                >
-                </div>
+                ></div>
               </div>
               <>
                 <MainContent />
@@ -135,9 +138,9 @@ export default function Home() {
                 <Playerbar />
               </PlayerProvider>
             </div>
-          </main >
+          </main>
         </>
       )}
-    </ >
+    </>
   );
 }
