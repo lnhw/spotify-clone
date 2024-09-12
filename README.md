@@ -13,7 +13,7 @@ This project is a Spotify clone, meticulously crafted to emulate the core featur
 ### Demo
 
 <video width="730" height="400" controls>
-<source src="./docs//videos//demo2.mp4" type="video/mp4">
+<source src="./docs/videos/demo2.mp4" type="video/mp4">
 </video>
 
 ### Key Feat
